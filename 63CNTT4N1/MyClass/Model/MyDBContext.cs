@@ -9,9 +9,9 @@ namespace MyClass.Model
 {
     public class MyDBContext: DbContext
     {
-        //tao ket noi
+        //Tao ket noi
         public MyDBContext() : base("name = StrConnect") { }
-        //ket noi cac bang
+        //Ket noi cac bang
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Contacts> Contacts { get; set; }
         public DbSet<Links> Links { get; set; }

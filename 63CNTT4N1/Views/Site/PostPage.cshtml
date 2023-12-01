@@ -1,0 +1,129 @@
+﻿@model MyClass.Model.Posts
+
+@{
+    ViewBag.Title = "PostPage";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<body>
+    <!-- ================ start banner area ================= -->
+    <section class="blog-banner-area" id="blog">
+        <div class="container h-100">
+            <div class="blog-banner">
+                <div class="text-center">
+                    <h1>@Model.Title</h1>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ end banner area ================= -->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area py-80px section-margin--small">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 posts-list">
+                    <div class="single-post row">
+                        <div class="col-lg-12">
+                            <div class="feature-img">
+                                <img class="img-fluid" src="~/Public/img/page/@Model.Image" alt="tenhinh">
+                            </div>
+                        </div>
+                        <div class="col-lg-3  col-md-3">
+                            <div class="blog_info text-right">
+                                <div class="post_tag">
+                                    <a href="#">Food,</a>
+                                    <a class="active" href="#">Technology,</a>
+                                    <a href="#">Politics,</a>
+                                    <a href="#">Lifestyle</a>
+                                </div>
+                                <ul class="blog_meta list">
+                                    <li>
+                                        <a href="#">
+                                            Mark wiens
+                                            <i class="lnr lnr-user"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            12 Dec, 2017
+                                            <i class="lnr lnr-calendar-full"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            1.2M Views
+                                            <i class="lnr lnr-eye"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            06 Comments
+                                            <i class="lnr lnr-bubble"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="social-links">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-behance"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 blog_details">
+                            <h2>@Model.Detail</h2>
+                            <p class="excert">
+                                Cửa hàng quần áo N.A CHÂT’S  đã hoạt động được 5 năm nhằm hướng đến những đối tượng thanh thiếu niên. Vị trí của cửa hàng nằm ở đường Mê Linh, thành phố Nha Trang, tỉnh Khánh Hòa.
+                            </p>
+                            <p>
+                                Đây là cửa hàng chuyên cung cấp quần áo và các phụ kiện liên quan cho cả nam lẫn nữ như áo sơ mi, áo thun, áo khoác, quần kaki, quần jean, dây chuyền, .... Do các sản phẩm đều được nhập từ các nước khác nên vô cùng độc lạ phù hợp với các bạn trẻ thích phong cách thời trang đường phố.
+                            </p>
+                            <p>
+                                Cửa hàng quần áo N.A CHÂT’S luôn chú trọng đến chất lượng sản phẩm và dịch vụ khách hàng. Cửa hàng cam kết cung cấp các sản phẩm thời trang chất lượng cao với giá cả hợp lý và hỗ trợ khách hàng trong quá trình mua sắm và đổi trả hàng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area =================-->
+
+    <section class="instagram_area">
+        <div class="container box_1620">
+            <div class="insta_btn">
+                <a class="btn theme_btn" href="https://www.instagram.com/na.chats">Follow us on instagram</a>
+            </div>
+            <div class="instagram_image row m0">
+                <a href="#"><img src="~/Public/img/instagram/ins.jpg" alt="tenhinh"></a>
+                <a href="#"><img src="~/Public/img/instagram/ins1.jpg" alt="tenhinh"></a>
+                <a href="#"><img src="~/Public/img/instagram/ins2.jpg" alt="tenhinh"></a>
+                <a href="#"><img src="~/Public/img/instagram/ins3.jpg" alt="tenhinh"></a>
+                <a href="#"><img src="~/Public/img/instagram/ins4.jpg" alt="tenhinh"></a>
+                <a href="#"><img src="~/Public/img/instagram/ins5.jpg" alt="tenhinh"></a>
+            </div>
+        </div>
+    </section>
+</body>

@@ -12,13 +12,21 @@ namespace MyClass.DAO
     {
         private MyDBContext db = new MyDBContext();
 
-        //INDEX
+        //Index
         public List<Categories> getList()
         {
             return db.Categories.ToList();
         }
 
-        //INDEX dua vao Status =1,2, con Status =0 == thung rac
+        public List<Categories> getListByPareantId(int parentid = 0)
+        {
+            return db.Categories
+                .Where(m => m.ParentId == parentid && m.Status == 1)
+                .OrderBy(m => m.Order)
+                .ToList();
+        }
+
+        //Index chi hien thi cac mau tin co status = 1,2, con Trash chi hien thi cac mau tin co status = 0
         public List<Categories> getList(string status = "All")
         {
             List<Categories> list = null;
@@ -47,7 +55,7 @@ namespace MyClass.DAO
             return list;
         }
 
-        //DETAILS
+        //Details
         public Categories getRow(int? id)
         {
             if (id == null)
@@ -60,21 +68,29 @@ namespace MyClass.DAO
             }
         }
 
-        //CREATE
+        //Hien thi danh sach 1 mau tin (ban ghi) voi kieu string = slug
+        public Categories getRow(string slug)
+        {
+            return db.Categories
+                .Where(m => m.Slug == slug && m.Status == 1)
+                .FirstOrDefault();
+        }
+
+        //Create
         public int Insert(Categories row)
         {
             db.Categories.Add(row);
             return db.SaveChanges();
         }
 
-        //UPDATE
+        //Update
         public int Update(Categories row)
         {
             db.Entry(row).State = EntityState.Modified;
             return db.SaveChanges();
         }
 
-        //DELETE
+        //Delete
         public int Delete(Categories row)
         {
             db.Categories.Remove(row);

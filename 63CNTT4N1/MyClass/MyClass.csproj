@@ -49,6 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\CategoriesDAO.cs" />
+    <Compile Include="DAO\LinksDAO.cs" />
+    <Compile Include="DAO\MenusDAO.cs" />
+    <Compile Include="DAO\PostsDAO.cs" />
+    <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="DAO\SlidersDAO.cs" />
+    <Compile Include="DAO\SuppliersDAO.cs" />
+    <Compile Include="DAO\TopicsDAO.cs" />
+    <Compile Include="DAO\UsersDAO.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Contacts.cs" />
     <Compile Include="Model\Links.cs" />
@@ -57,6 +65,7 @@
     <Compile Include="Model\OrderDetails.cs" />
     <Compile Include="Model\Orders.cs" />
     <Compile Include="Model\Posts.cs" />
+    <Compile Include="Model\ProductInfo.cs" />
     <Compile Include="Model\Products.cs" />
     <Compile Include="Model\Sliders.cs" />
     <Compile Include="Model\Suppliers.cs" />

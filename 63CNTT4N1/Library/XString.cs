@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 
 namespace _63CNTT4N1.Library
 {
-    public class XString
+    public static class XString
     {
         public static string Str_Slug(string s)
         {
@@ -27,6 +29,16 @@ namespace _63CNTT4N1.Library
                 s = Regex.Replace(s, ss[0], ss[1]);
             }
             return s;
+        }
+
+        public static string ToShortString(this string str, int? length)
+        {
+            int lengt = (length ?? 20);
+            if (str.Length > lengt)
+            {
+                str = str.Substring(0, lengt) + "...";
+            }
+            return str;
         }
     }
 }

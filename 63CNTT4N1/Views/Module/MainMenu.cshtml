@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MyClass.Model.Menus>
+
+<style>
+    .nav-shop li .giohang {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        position: relative
+    }
+
+        .nav-shop li .giohang .nav-shop__circle {
+            font-size: 9px;
+            display: inline-block;
+            background: #384aeb;
+            color: #fff;
+            padding: 0px 5px;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            right: -12px
+        }
+</style>
+
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand logo_h" href="~/Site/Home"><img src="~/Public/img/logo.jpg" alt="logo" style="width: 60px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                        @foreach (var item in Model)
+                        {
+                            @Html.Action("MainMenuSub", "Module", new { @id = @item.Id });
+                        }
+                    </ul>
+                    <ul class="nav-shop">
+                        <li class="nav-item"><button><i class="ti-search"></i></button></li>
+                        <li class="nav-item"><a href="~/gio-hang" class="giohang"><i class="ti-shopping-cart"></i><span class="nav-shop__circle">@Session["Qual"]</span></a> </li>
+                        <li class="nav-item">
+                            @if (Session["UserCustomer"] == null)
+                            {
+                                <a class="button" href="~/dang-nhap">Đăng nhập / Đăng ký</a>
+                            }
+                            else
+                            {
+                                <span>Hi, @Session["UserCustomer"]</span>
+                                <a class="button ml-3" href="@Url.Action("DangXuat", "Khachhang")">Đăng xuất</a>
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

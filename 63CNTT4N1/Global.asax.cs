@@ -22,7 +22,10 @@ namespace _63CNTT4N1
         protected void Session_Start()
         {
             Session["UserID"] = "1";
+            //Gio hang
+            Session["MyCart"] = "";//Khoi tao gia tri = NULL
+            //So luong gio hang
+            Session["Qual"] = "0";
         }
-
     }
 }

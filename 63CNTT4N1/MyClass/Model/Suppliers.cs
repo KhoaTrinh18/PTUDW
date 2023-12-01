@@ -14,40 +14,56 @@ namespace MyClass.Model
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Display(Name = "Tên nhà cung cấp")]
+        [Required(ErrorMessage = "Tên nhà cung cấp không được để trống")]
         public string Name { get; set; }
 
+        [Display(Name = "Hình ảnh")]
         public string Image { get; set; }
 
+        [Display(Name = "Liên kết")]
         public string Slug { get; set; }
 
+        [Display(Name = "Sắp xếp")]
         public int? Order { get; set; }
 
+        [Display(Name = "Tên đẩy đủ")]
         public string FullName { get; set; }
 
+        [Display(Name = "Điện thoại")]
         public string Phone { get; set; }
 
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
+        [Display(Name = "Mô tả")]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
         public string MetaDesc { get; set; }
 
-        [Required]
+        [Display(Name = "Từ khóa")]
+        [Required(ErrorMessage = "Từ khóa không được để trống")]
         public string MetaKey { get; set; }
 
-        [Required]
+        [Display(Name = "Người tạo")]
+        [Required(ErrorMessage = "Người tạo không được để trống")]
         public int CreateBy { get; set; }
 
-        [Required]
+        [Display(Name = "Ngày tạo")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Ngày tạo không được để trống")]
         public DateTime CreateAt { get; set; }
 
-        [Required]
+        [Display(Name = "Người cập nhật")]
+        [Required(ErrorMessage = "Người cập nhật không được để trống")]
         public int UpdateBy { get; set; }
 
-        [Required]
+        [Display(Name = "Ngày cập nhật")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Ngày cập nhật không được để trống")]
         public DateTime UpdateAt { get; set; }
 
-        [Required]
+        [Display(Name = "Trạng thái")]
+        [Required(ErrorMessage = "Trạng thái không được để trống")]
         public int Status { get; set; }
     }
 }

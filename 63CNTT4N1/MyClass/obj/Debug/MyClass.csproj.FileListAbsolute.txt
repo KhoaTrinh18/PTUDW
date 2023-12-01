@@ -34,3 +34,15 @@ C:\Users\trinh\OneDrive\Tài liệu\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\ob
 C:\Users\trinh\OneDrive\Tài liệu\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.csproj.CopyComplete
 C:\Users\trinh\OneDrive\Tài liệu\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.dll
 C:\Users\trinh\OneDrive\Tài liệu\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.pdb
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\MyClass.dll.config
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\MyClass.dll
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\MyClass.pdb
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\EntityFramework.dll
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\EntityFramework.xml
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.csproj.AssemblyReference.cache
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.csproj.CoreCompileInputs.cache
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.csproj.CopyComplete
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.dll
+C:\Users\trinh\OneDrive\Documents\WebDev\ThucHanh\PTUDW\63CNTT4N1\MyClass\obj\Debug\MyClass.pdb

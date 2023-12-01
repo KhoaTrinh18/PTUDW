@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MyClass.Model.Categories>
+
+<style>
+    .categories li a{
+        color: black;
+        font-size: 16px;
+        border-bottom: 1px solid black;
+        padding: 15px 30px;
+        width: 100%;
+    }
+
+    .categories li:last-child a{
+        border: none;
+    }
+
+    .categories li a:hover {
+        color: blue;
+    }
+</style>
+
+<div class="sidebar-categories">
+    <div class="head">Danh mục sản phẩm</div>
+    <ul class="categories">
+        @foreach (var item in Model)
+        {
+            <li class="filter-list">
+                <a href="~/@item.Slug">@item.Name</a>
+            </li>
+        }
+    </ul>
+</div>

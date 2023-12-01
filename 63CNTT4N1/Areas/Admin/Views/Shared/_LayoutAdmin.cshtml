@@ -57,12 +57,12 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/Public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <div class="user-panel mt-3 pb-3 mb-3">
+                    <div class="info d-flex justify-content-center">
+                        <a class="d-block">@Session["UserAdmin"]</a>
                     </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                    <div class="d-flex justify-content-center">
+                        <a href="@Url.Action("DangXuat", "Dashboard")" class="btn btn-danger">Đăng Xuất</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
@@ -81,19 +81,19 @@
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index","Product")" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Danh mục sản phẩm</p>
+                                        <p>Sản phẩm</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index","Category")" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Danh mục loại sản phẩm</p>
+                                        <p>Loại sản phẩm</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index","Supplier")" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Danh mục nhà cung cấp</p>
+                                        <p>Nhà cung cấp</p>
                                     </a>
                                 </li>
                             </ul>
@@ -111,13 +111,13 @@
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index","Post")" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Danh sách bài viết</p>
+                                        <p>Bài viết</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index","Topic")" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Chủ đề bài viết</p>
+                                        <p>Chủ đề</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -147,7 +147,7 @@
                                 <li class="nav-item">
                                     <a href="@Url.Action("Index","Slider")" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Slide Show</p>
+                                        <p>Slider</p>
                                     </a>
                                 </li>
                             </ul>

@@ -109,6 +109,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -130,10 +133,25 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Controllers\GiohangController.cs" />
+    <Compile Include="Controllers\KhachhangController.cs" />
+    <Compile Include="Controllers\LienheController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\TimkiemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Library\CartItem.cs" />
+    <Compile Include="Library\XCart.cs" />
     <Compile Include="Library\XMessage.cs" />
     <Compile Include="Library\XString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +170,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Public\css\jquery.dataTables.min.css" />
     <Content Include="Public\css\main.css" />
     <Content Include="Public\css\style.css" />
     <Content Include="Public\dist\css\adminlte.css" />
@@ -262,43 +281,14 @@
     <Content Include="Public\img\home\hero-slide2.png" />
     <Content Include="Public\img\home\hero-slide3.png" />
     <Content Include="Public\img\home\parallax-bg.png" />
-    <Content Include="Public\img\instagram\Image-01.jpg" />
-    <Content Include="Public\img\instagram\Image-02.jpg" />
-    <Content Include="Public\img\instagram\Image-03.jpg" />
-    <Content Include="Public\img\instagram\Image-04.jpg" />
-    <Content Include="Public\img\instagram\Image-05.jpg" />
-    <Content Include="Public\img\instagram\Image-06.jpg" />
-    <Content Include="Public\img\instagram\Image-07.jpg" />
-    <Content Include="Public\img\instagram\Image-08.jpg" />
-    <Content Include="Public\img\instagram\ins-1.jpg" />
-    <Content Include="Public\img\instagram\ins-2.jpg" />
-    <Content Include="Public\img\instagram\ins-3.jpg" />
-    <Content Include="Public\img\instagram\ins-4.jpg" />
-    <Content Include="Public\img\instagram\ins-5.jpg" />
-    <Content Include="Public\img\instagram\ins-6.jpg" />
+    <Content Include="Public\img\instagram\ins.jpg" />
+    <Content Include="Public\img\instagram\ins1.jpg" />
+    <Content Include="Public\img\instagram\ins2.jpg" />
+    <Content Include="Public\img\instagram\ins3.jpg" />
+    <Content Include="Public\img\instagram\ins4.jpg" />
+    <Content Include="Public\img\instagram\ins5.jpg" />
     <Content Include="Public\img\login.jpg" />
     <Content Include="Public\img\logo.png" />
-    <Content Include="Public\img\product\card.jpg" />
-    <Content Include="Public\img\product\product-sm-1.png" />
-    <Content Include="Public\img\product\product-sm-2.png" />
-    <Content Include="Public\img\product\product-sm-3.png" />
-    <Content Include="Public\img\product\product-sm-4.png" />
-    <Content Include="Public\img\product\product-sm-5.png" />
-    <Content Include="Public\img\product\product-sm-6.png" />
-    <Content Include="Public\img\product\product-sm-7.png" />
-    <Content Include="Public\img\product\product-sm-8.png" />
-    <Content Include="Public\img\product\product-sm-9.png" />
-    <Content Include="Public\img\product\product1.png" />
-    <Content Include="Public\img\product\product2.png" />
-    <Content Include="Public\img\product\product3.png" />
-    <Content Include="Public\img\product\product4.png" />
-    <Content Include="Public\img\product\product5.png" />
-    <Content Include="Public\img\product\product6.png" />
-    <Content Include="Public\img\product\product7.png" />
-    <Content Include="Public\img\product\product8.png" />
-    <Content Include="Public\img\product\review-1.png" />
-    <Content Include="Public\img\product\review-2.png" />
-    <Content Include="Public\img\product\review-3.png" />
     <Content Include="Public\img\r1.jpg" />
     <Content Include="Public\img\r10.jpg" />
     <Content Include="Public\img\r11.jpg" />
@@ -311,6 +301,7 @@
     <Content Include="Public\img\r7.jpg" />
     <Content Include="Public\img\r8.jpg" />
     <Content Include="Public\img\r9.jpg" />
+    <Content Include="Public\js\jquery.dataTables.min.js" />
     <Content Include="Public\js\main.js" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
     <Content Include="Public\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css" />
@@ -2659,6 +2650,55 @@
     <Content Include="Areas\Admin\Views\Category\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Supplier\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Supplier\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Supplier\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Supplier\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Supplier\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Supplier\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\DangKy.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\DangNhap.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -2683,12 +2723,36 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_LayoutSite.cshtml" />
-    <Content Include="Views\Site\Index.cshtml" />
+    <Content Include="Views\Module\MainMenu.cshtml" />
+    <Content Include="Views\Module\CategoriesList.cshtml" />
+    <Content Include="Views\Module\MainMenuSub_0.cshtml" />
+    <Content Include="Views\Module\MainMenuSub_1.cshtml" />
+    <Content Include="Views\Module\MenuFooter.cshtml" />
+    <Content Include="Views\Site\Home.cshtml" />
+    <Content Include="Views\Module\Slider.cshtml" />
+    <Content Include="Views\Site\Product.cshtml" />
+    <Content Include="Views\Site\HomeProduct.cshtml" />
+    <Content Include="Views\Site\ProductCategory.cshtml" />
+    <Content Include="Views\Site\ProductDetail.cshtml" />
+    <Content Include="Views\Site\PostPage.cshtml" />
+    <Content Include="Views\Giohang\Index.cshtml" />
+    <Content Include="Views\Giohang\ThanhToan.cshtml" />
+    <Content Include="Views\KhachHang\DangNhap.cshtml" />
+    <Content Include="Views\KhachHang\DangKy.cshtml" />
+    <Content Include="Views\Shared\Message.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Admin\Views\Role\" />
+    <Folder Include="Public\img\page\" />
+    <Folder Include="Public\img\post\" />
+    <Folder Include="Public\img\product\" />
+    <Folder Include="Public\img\slider\" />
+    <Folder Include="Public\img\supplier\" />
+    <Folder Include="Views\Contact\" />
+    <Folder Include="Views\Lienhe\" />
+    <Folder Include="Views\Timkiem\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

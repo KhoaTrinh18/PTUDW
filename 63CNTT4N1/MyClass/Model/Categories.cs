@@ -14,11 +14,11 @@ namespace MyClass.Model
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Tên loại hàng")]
+        [Display(Name = "Tên loại sản phẩm")]
         [Required(ErrorMessage = "Tên loại sản phẩm không được để trống")]
         public string Name { get; set; }
 
-        [Display(Name = "Tên rút gọn")]
+        [Display(Name = "Liên kết")]
         public string Slug { get; set; }
 
         [Display(Name = "Cấp cha")]
@@ -35,22 +35,24 @@ namespace MyClass.Model
         [Required(ErrorMessage = "Từ khóa không được để trống")]
         public string MetaKey { get; set; }
 
-        [Required(ErrorMessage = "Người tạo không được để trống")]
         [Display(Name = "Người tạo")]
+        [Required(ErrorMessage = "Người tạo không được để trống")]
         public int CreateBy { get; set; }
 
-        [Required(ErrorMessage = "Ngày tạo không được để trống")]
         [Display(Name = "Ngày tạo")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Ngày tạo không được để trống")]
         public DateTime CreateAt { get; set; }
 
         [Display(Name = "Người cập nhật")]
         public int? UpdateBy { get; set; }
 
         [Display(Name = "Ngày cập nhật")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? UpdateAt { get; set; }
 
-        [Required(ErrorMessage = "Trạng thái không được để trống")]
         [Display(Name = "Trạng thái")]
+        [Required(ErrorMessage = "Trạng thái không được để trống")]
         public int Status { get; set; }
     }
 }

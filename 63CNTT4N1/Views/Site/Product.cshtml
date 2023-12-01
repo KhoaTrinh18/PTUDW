@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MyClass.Model.ProductInfo>
+
+<style>
+    .card-product__imgOverlay li a {
+        border: 0;
+        border-radius: 0;
+        padding: 7px 12px;
+        background: #8894ff
+    }
+
+    .card-product__imgOverlay li a i, .card-product__imgOverlay li a span {
+        font-size: 15px;
+        color: #fff;
+        vertical-align: middle
+    }
+
+    .card-product__imgOverlay li a:hover {
+        background: #384aeb
+    }
+</style>
+
+<section class="section-margin calc-60px">
+    <div class="container">
+        <div class="section-intro pb-60px">
+            <p>Tất cả sản phẩm</p>
+            <h2><span class="section-intro__style">Tất cả sản phẩm</span></h2>
+        </div>
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center card-product">
+                        <div class="card-product__img">
+                            <img class="card-img" src="~/Public/img/product/@product.Image" alt="tenhinh">
+                            <ul class="card-product__imgOverlay">
+                                <li><button><i class="ti-search"></i></button></li>
+                                <li>
+                                    <a href="@Url.Action("AddCart","Giohang", new { productid = product.Id})">
+                                        <i class="ti-shopping-cart"></i>
+                                    </a>
+                                </li>
+                                <li><button><i class="ti-heart"></i></button></li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <p>@product.CatName</p>
+                            <h4 class="card-product__title"><a href="~/@product.Slug">@product.Name</a></h4>
+                            <p strong class="card-product__price">@string.Format("{0:C0}", @product.SalePrice)</p>
+                            <del><span class="danger card-product__price text-danger">@string.Format("{0:C0}", @product.Price)</span></del>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
